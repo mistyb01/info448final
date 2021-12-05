@@ -1,19 +1,45 @@
 package edu.uw.mistyb01.recipefinder
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.uw.mistyb01.recipefinder.network.RecipeSearchAPI
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // button to test fetching
+        findViewById<Button>(R.id.test_btn).setOnClickListener {
+            Log.v(TAG, "getting search results")
+
+            // send the fetch request
+            RecipeSearchAPI.retrofitService.getRecipeSearchResults(
+                "public", "hong kong", "db57c240", "be9ab19fed9021fe5bdfdf8ba653d6e6"
+            ).enqueue(object: Callback<String> {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+                    val body = response.body()
+                    Log.v(TAG, "$body")
+                }
+
+                override fun onFailure(call: Call<String>, t: Throwable) {
+                    Log.e(TAG, "error: ${t.message}")
+                }
+
+            })
+        }
 
         // model test
         val data = mutableListOf<String>()
@@ -25,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         val recycler = findViewById<RecyclerView>(R.id.recycler_search_recipes)
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = adapter
+
+
 
     }
 }

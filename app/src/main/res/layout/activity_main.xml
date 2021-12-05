@@ -12,6 +12,13 @@
         android:layout_height="wrap_content"
         android:text="Recipes List" />
 
+    <Button
+        android:id="@+id/test_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fetch test" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_search_recipes"
         android:layout_width="wrap_content"
