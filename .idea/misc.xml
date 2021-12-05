@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Misty/Documents/GitHub/RecipeFinder/app/src/main/res/layout/activity_main.xml" value="0.14412360688956433" />
+        <entry key="..\:/Users/Misty/Documents/GitHub/RecipeFinder/app/src/main/res/layout/fragment_recipe_detail.xml" value="0.1" />
+        <entry key="..\:/Users/Misty/Documents/GitHub/RecipeFinder/app/src/main/res/layout/fragment_search_results.xml" value="0.1" />
         <entry key="..\:/Users/Misty/Documents/GitHub/RecipeFinder/app/src/main/res/layout/recipe_item.xml" value="0.14412360688956433" />
       </map>
     </option>

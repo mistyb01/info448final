@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/search_results_fragment">
+
+    <fragment
+        android:id="@+id/search_results_fragment"
+        android:name="edu.uw.mistyb01.recipefinder.SearchResultsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <action
+            android:id="@+id/action_to_recipe_detail_fragment"
+            app:destination="@id/recipe_detail_fragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recipe_detail_fragment"
+        android:name="edu.uw.mistyb01.recipefinder.RecipeDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </fragment>
+
+
+
+</navigation>
+
+
